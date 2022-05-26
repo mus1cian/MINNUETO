@@ -4,7 +4,7 @@
 from pathlib import Path
 from tkinter.ttk import Style, Treeview
 import cx_Oracle
-import connection as conn
+import sql_connection.connection as conn
 import pygame
 
 # from tkinter import *
@@ -12,7 +12,7 @@ from tkinter import BOTTOM, CENTER, END, Entry, Label, LabelFrame, Scrollbar, Tk
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./build/assets")
-
+ 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
