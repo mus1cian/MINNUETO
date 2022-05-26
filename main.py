@@ -29,9 +29,6 @@ canvas = Canvas(
 canvas.place(x = 0, y = 0)
 
 window.title("Minnueto")
-window.geometry("591x538")
-window.configure(bg = "#FFFFFF")
-
 p1 = PhotoImage(file = 'build/assets/icon.png')
 
 window.iconphoto(False, p1)

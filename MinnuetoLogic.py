@@ -21,14 +21,16 @@ class MinnuetoLogic:
         self.labels = {}
         self.columns = []
         self.tree = Treeview()
-        self.newWindow = Toplevel(self.root)
         
     def getInfo(self,tableName):  
+        self.entries = {}
+        self.labels = {}
+        self.columns = []
         self.SQL.openConnection()
         self.cur, self.con = self.SQL.getConnection()
         self.newWindow = Toplevel(self.root)       
         self.newWindow.title(tableName)
-        self.newWindow.geometry("700x600")
+        self.newWindow.geometry("700x1000")
         scrollbar = Scrollbar(self.newWindow, orient='horizontal')
         scrollbar.pack(side=BOTTOM, fill='x')
         yscrollbar = Scrollbar(self.newWindow, orient='vertical')
@@ -73,10 +75,9 @@ class MinnuetoLogic:
         
     def agregar_registro(self, tableName):
         values = "("
-        
-        print(self.entries[0].get())
         for idx, col in enumerate(self.columns):
             if len(self.entries[idx].get()) == 0:
+                print("aaaa")
                 return
             if not self.entries[idx].get().isdecimal():
                 values = values + "'" + self.entries[idx].get() + "',"

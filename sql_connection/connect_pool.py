@@ -1,5 +1,5 @@
 import cx_Oracle
-import connection as conn
+import sql_connection.connection as conn
 
 # Create the session pool
 pool = cx_Oracle.SessionPool(
